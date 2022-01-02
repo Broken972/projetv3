@@ -1,0 +1,28 @@
+@mixin xs {
+    @media only screen and (max-width: 500px){
+        @content;
+    }
+    
+}
+
+@mixin xl {
+    @media only screen and (min-width: 1500px){
+        @content;
+    }
+    
+}
+
+@mixin responsive($devise) {
+    @if $devise == xs {
+        @include xs {
+            @content;
+        }
+    }
+}
+@mixin responsive($devise) {
+    @if $devise == xl {
+        @include xl {
+            @content;
+        }
+    }
+}
